@@ -8,6 +8,14 @@ An interview portfolio prototype by Brendan Lorton: identify potential OpenAI cu
 
 ## Run locally
 
+## Private cloud pipeline
+
+**[Open your saved pipeline](https://atlas-sales-demo-brendan.bluefir512.chatgpt.site/pipeline-login.html)**. The separate Supabase project holds the 29-account starting snapshot, four reviews and five signals. Owner sign-in is limited to Brendan's personal email. Cloud saves use version checks to reject stale-device overwrites. The public interview demo remains visitor-local.
+
+Cloud intake is deployed, with a 7 AM America/New_York schedule prepared and paused pending `ATLAS_OPENAI_API_KEY` and a successful live intake test. It is not yet active. See `supabase/SETUP_STATUS.md` for activation and verification. End-to-end real-email sign-in still requires the owner's first sign-in. Do not publish service-role keys, session tokens or the OpenAI secret.
+
+### Local startup
+
 Requires Python 3.10 or newer. No third-party packages or API key required for the dashboard.
 
 ```sh

@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {extract,validate,publicHttps} from './core.mjs';
+const p={name:'Example Manufacturing',sector:'Manufacturing',hq:'Boston, MA, US',website:'https://example.com',workflow:'Approved docs',businessNeed:'Hypothesis',openaiFit:'Potential',buyerRole:'Operations',nextStep:'Discover',sourceUrl:'https://example.com/news',sourceDate:'2026-11-10',title:'Expansion',type:'expansion',locationEvidence:'Boston, Massachusetts',priority:'High'};
+assert.equal(validate({...p},new Set([p.sourceUrl]),'2026-11-11').name,p.name);
+assert.throws(()=>validate({...p},new Set(),'2026-11-11'),/not cited/);
+assert.throws(()=>validate({...p,sourceDate:'2026-01-01'},new Set([p.sourceUrl]),'2026-11-11'),/window/);
+assert.throws(()=>publicHttps('https://127.0.0.1/a'));
+assert.throws(()=>publicHttps('https://metadata.internal/a'));
+assert.throws(()=>validate({...p,sourceUrl:'https://news.example.net/story'},new Set(),'2026-11-11'),/official/);
+assert.deepEqual(extract({status:'completed',output:[{type:'message',content:[{type:'output_text',text:'{"prospects":[]}',annotations:[]}]}]}).prospects,[]);
+assert.throws(()=>extract({status:'incomplete'}),/incomplete/);
+console.log('PASS: bounded response parsing, cited primary domains, date window, zero prospects and private URL rejection.');

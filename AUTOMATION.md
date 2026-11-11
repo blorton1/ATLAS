@@ -21,3 +21,7 @@ Use atlas_market.sqlite and atlas_plans.sqlite here for all future runs. Earlier
 Use an available Python 3.10+ interpreter. Known local fallback: C:/Program Files/WindowsApps/OpenAI.CodexPrimaryRuntime.v26-1104-2876-0_26.1104.2876.0_arm64__3k8sg7r9htsxt/dependencies/python/python.exe. Modules are standard-library only. The dashboard server need not run for database imports. Prefer built-in web research tools for sources; local network collection may require permissions unavailable unattended. Never bypass those restrictions. No paid subscriptions, outreach, commits, schema changes, or edits to application code during scheduled research.
 
 Daily schedule: 07:00 America/New_York (Eastern, daylight-saving aware through the app's local timezone). Computer and desktop app must remain running for local automation.
+# Cloud transition — 2026-11-11
+
+Supabase project `iikworeqzzinccrhshed` is provisioned and the initial pipeline imported. The cloud intake function is deployed; its 7 AM Eastern schedule is PAUSED until the OpenAI secret and a successful test are verified. The older local automation below is retained during setup. At cutover, deactivate that local automation to avoid maintaining divergent pipelines. Cloud data is authoritative after cutover; never overwrite it from an old SQLite snapshot.
+
