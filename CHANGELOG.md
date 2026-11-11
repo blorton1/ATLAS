@@ -21,3 +21,10 @@ The current product is an OpenAI sales dashboard. Prioritize manufacturing and d
 - No scheduler installed, no outreach, and no CRM/billing/PitchBook integrations. Customer labels and opportunity values are user-entered planning data.
 - USAspending matching needs legal-name/UEI review and was tested offline, not against a live API response.
 - Qualification does not auto-expire. Review dates are visible; re-review after later funding or ownership changes. Downgrading a review preserves CRM history.
+# Qualification and federal sales update — 2026-11-10
+
+- Added a dashboard discovery-gap table and editable buying-case fields for all accounts.
+- Added Commercial / Federal / Partner sales motions, mission owner, funding path, acquisition path and deployment requirements.
+- Preserved existing account data and qualification gates; notes are not verified buying intent.
+- Validated 33 Python tests, browser adapter tests, and browser save/reload for the new fields.
+

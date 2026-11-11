@@ -21,6 +21,8 @@ Open **http://127.0.0.1:8766/atlas_growth_live.html**. Keep the server terminal 
 
 ## Five-minute interview demo
 
+The sales dashboard now includes **Qualification gaps** for featured prospects. Open **Build buying case** to record a value baseline, evaluation target, economic buyer, champion, compelling event, decision process and competitive advantage. Select Commercial, Federal or Partner as the sales motion. Federal / partner fields capture the mission owner, funding path, acquisition route and deployment requirements. Blank inputs remain visible as discovery gaps; entered notes are not independently verified or used as automatic promotion gates.
+
 1. **Prioritize:** inspect company cards, business needs, buyer roles and next sales steps.
 2. **Go deep:** open Nominal. Separate its sourced funding signal from the hypothesis that OpenAI could support engineering AI workflows. Discuss the current model stack, deployment constraints and evaluation criteria you would qualify.
 3. **Qualify:** inspect a prospect's evidence and review status. New additions remain **Needs review** until human qualification. Seed through later-stage companies are in scope; funding stage is context, not an exclusion gate.

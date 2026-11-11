@@ -24,4 +24,14 @@ assert.equal(req('/api/research/import','POST',{...batch,events:[{...event,title
 assert.equal(req('/api/research/collect','POST',{}).status,501);
 const bad=createDemoApi(seed,{getItem:()=>null,setItem:()=>{throw Error('quota');},removeItem:()=>{}});assert.equal(bad.request('/api/account-plans/a','PUT',{version:1,plan:{notes:'not saved'}}).status,507);assert.equal(bad.request('/api/bootstrap').body.accountPlans.a.plan.notes,'Preserve me');
 a.reset();assert.equal(req('/api/bootstrap').body.accounts.length,1);assert.equal(req('/api/bootstrap').body.accountPlans.a.plan.notes,'Preserve me');
+const qualificationFields={salesMotion:'Federal',valueBaseline:'Validate current hours',valueTarget:'Agree measurable KPI',economicBuyer:'Identify budget owner',champion:'Validate sponsor',decisionProcess:'Map decision process',competitiveAdvantage:'Compare incumbent',compellingEvent:'Budget review',missionOwner:'Program office to identify',fundingPath:'Confirm funding source',acquisitionPath:'Confirm contracting route',deploymentRequirements:'Confirm data boundary'};
+const federalPlan={...seed.accountPlans.a.plan,...qualificationFields};
+assert.equal(req('/api/account-plans/a','PUT',{version:1,plan:federalPlan}).status,200);
+const reloaded=createDemoApi(seed,storage).request('/api/bootstrap').body.accountPlans.a.plan;
+assert.deepEqual(reloaded,federalPlan);
+assert.deepEqual(reloaded.contacts,seed.accountPlans.a.plan.contacts);
+assert.equal(req('/api/account-plans/a','PUT',{version:2,plan:{...federalPlan,salesMotion:'Government'}}).status,400);
+assert.equal(req('/api/account-plans/a','PUT',{version:2,plan:{...federalPlan,valueTarget:42}}).status,400);
+assert.equal(req('/api/bootstrap').body.accountPlans.a.version,2);
+a.reset();
 console.log('PASS: snapshot, isolated persistence, cross-tab conflicts, qualification, preservation, promotion idempotency, candidate dedup, atomic imports, disabled collector, storage failure and reset.');

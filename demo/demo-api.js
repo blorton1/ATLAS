@@ -26,12 +26,12 @@
   const amount = v => typeof v==='number'&&Number.isFinite(v)&&v>=0;
   const qualified = r => r&&r.status==='Qualified target'&&r.usVerified===true&&r.sectorVerified===true&&r.usSource&&r.sectorSource&&r.checkedOn&&r.reviewer?.trim()&&r.rationale?.trim();
   const stages=['Unknown','Seed','Series A','Series B','Series C','Series D','Series E+','Public','Acquired'];
-  const planText=['qualification','stageSource','stageRationale','stage','owner','nextAction','nextActionDate','notes','planUpdatedAt','relationship','objectives'];
+  const planText=['qualification','stageSource','stageRationale','stage','owner','nextAction','nextActionDate','notes','planUpdatedAt','relationship','objectives','salesMotion','valueBaseline','valueTarget','economicBuyer','champion','decisionProcess','competitiveAdvantage','compellingEvent','missionOwner','fundingPath','acquisitionPath','deploymentRequirements'];
   const listFields={contacts:['id','name','role','email','influence'],opportunities:['id','name','stage','amount','product','nextStep'],activities:['id','date','type','summary']};
   function validatePlan(p) {
     object(p,[...planText,...Object.keys(listFields),'shortlisted']);
     for(const k of planText)if(p[k]!=null)text(p[k],k);
-    const enums={qualification:['Needs review','Qualified target','Outside target'],stage:['Identified','Qualified','Outreach','Discovery','Pilot','Opportunity','Customer','Growth discovery','Expansion opportunity','Disqualified'],relationship:['Prospect','Customer','Partner']};
+    const enums={qualification:['Needs review','Qualified target','Outside target'],stage:['Identified','Qualified','Outreach','Discovery','Pilot','Opportunity','Customer','Growth discovery','Expansion opportunity','Disqualified'],relationship:['Prospect','Customer','Partner'],salesMotion:['Commercial','Federal','Partner']};
     for(const [k,values] of Object.entries(enums))if(p[k]&&!values.includes(p[k]))fail('Unsupported '+k);
     if(own(p,'shortlisted')&&typeof p.shortlisted!=='boolean')fail('shortlisted must be boolean.');
     if(p.stageSource)https(p.stageSource,'stageSource');

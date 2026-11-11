@@ -10,6 +10,9 @@ from urllib.parse import urlsplit
 TEXT_FIELDS = {
     'qualification', 'stageSource', 'stageRationale', 'stage', 'owner',
     'nextAction', 'nextActionDate', 'notes', 'planUpdatedAt', 'relationship', 'objectives',
+    'salesMotion', 'valueBaseline', 'valueTarget', 'economicBuyer', 'champion',
+    'decisionProcess', 'competitiveAdvantage', 'compellingEvent', 'missionOwner',
+    'fundingPath', 'acquisitionPath', 'deploymentRequirements',
 }
 LIST_FIELDS = {
     'contacts': {'id', 'name', 'role', 'email', 'influence'},
@@ -56,6 +59,7 @@ def validate_plan(plan):
         'qualification': {'Needs review', 'Qualified target', 'Outside target'},
         'stage': SALES_STAGES,
         'relationship': {'Prospect', 'Customer', 'Partner'},
+        'salesMotion': {'Commercial', 'Federal', 'Partner'},
     }.items():
         if plan.get(field) not in (None, '') and plan[field] not in allowed:
             raise ValueError(f'Unsupported {field}')
