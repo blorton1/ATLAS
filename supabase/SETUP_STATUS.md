@@ -27,3 +27,7 @@
 4. Owner completes first email sign-in; verify an account save on a second device. Default email links can be pasted into the sign-in page's fallback if redirect configuration has not yet been customized.
 
 End-to-end real-email sign-in, successful OpenAI intake and schedule activation remain pending. The local SQLite app remains a preserved historical workspace; after cutover, cloud state is authoritative. Never republish private state into the public demo.
+
+## API key verification — November 11, 2026
+The secret is now configured. A live retry returned OpenAI error 429 credit_balance_exhausted. API credits must be added before another retry. Cron remains paused; no new prospects were added. Error diagnostics now retain the sanitized provider error code without exposing the secret.
+
