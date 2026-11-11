@@ -25,3 +25,7 @@ Daily schedule: 07:00 America/New_York (Eastern, daylight-saving aware through t
 
 Supabase project `iikworeqzzinccrhshed` is provisioned and the initial pipeline imported. The cloud intake function is deployed; its 7 AM Eastern schedule is PAUSED until the OpenAI secret and a successful test are verified. The older local automation below is retained during setup. At cutover, deactivate that local automation to avoid maintaining divergent pipelines. Cloud data is authoritative after cutover; never overwrite it from an old SQLite snapshot.
 
+
+## Current schedule — November 11, 2026
+Brendan selected Codex daily prospecting at 7 AM America/New_York with Supabase persistence. The automation prompt in Codex is authoritative for cloud imports; use connected Supabase tools and public.atlas_finish_daily_run in an atomic administrator transaction, never enqueue the paid Edge worker. Supabase cron is intentionally paused and API funding is not required for this workflow. Local SQLite intake instructions above are historical. Preserve existing owner data and keep public-demo edits isolated.
+

@@ -1,1 +1,4 @@
 2026-11-10 correction: ATLAS is a SALES dashboard for finding and developing potential OpenAI clients, especially manufacturing and defense-tech startups, seed through later stage. Earlier research-first UI and Series D ceiling misrepresented the user goal. Lead with business need, OpenAI fit, buyer, why now, priority and next sales step. Evidence supports sales decisions; it must not become the main product or prevent adding a plausible prospect with unknown funding stage.
+
+2026-11-11 correction: Brendan chose Supabase for durable pipeline storage and the Codex desktop agent for daily 7 AM Eastern prospecting because he does not want OpenAI API costs. Do not activate the paid cloud research worker, request API funding, or revert to local-only SQLite ingestion. The Codex agent must research with connected tools and append verified candidates to Supabase while preserving human data. Explain that the computer and Codex app must be running for local automation.
+

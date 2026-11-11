@@ -31,3 +31,7 @@ End-to-end real-email sign-in, successful OpenAI intake and schedule activation 
 ## API key verification — November 11, 2026
 The secret is now configured. A live retry returned OpenAI error 429 credit_balance_exhausted. API credits must be added before another retry. Cron remains paused; no new prospects were added. Error diagnostics now retain the sanitized provider error code without exposing the secret.
 
+
+## Current operating choice — November 11, 2026
+Supersedes the API-credit activation instructions above. Supabase stays as durable storage. The existing Codex automation atlas-daily-company-intelligence is ACTIVE at 7 AM Eastern and now performs web prospecting and writes new prospects directly to the Supabase owner workspace (or private seed until first sign-in). Supabase cron remains PAUSED by user choice, not awaiting funding. No paid OpenAI API worker should run. Codex and the computer must be running. The public interview demo remains a separate snapshot.
+
