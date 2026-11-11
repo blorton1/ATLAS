@@ -1,0 +1,6 @@
+ATLAS main folder: C:\Users\brend\Documents\Codex\ATLAS
+Open PowerShell here and run: .\Start_ATLAS.ps1
+Dashboard: http://127.0.0.1:8766/atlas_growth_live.html
+Daily research: existing Codex automation updated to use this folder, 7 AM Eastern.
+Keep Codex and this computer running for local scheduled research.
+New discoveries enter Research & daily feed > Qualification queue as Needs review.

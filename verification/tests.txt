@@ -1,0 +1,68 @@
+test_full_name_query_and_pending_result (test_awards.AwardCollectorTests.test_full_name_query_and_pending_result) ... ok
+test_invalid_amount_stays_unknown (test_awards.AwardCollectorTests.test_invalid_amount_stays_unknown) ... ok
+test_invalid_envelopes_and_limits (test_awards.AwardCollectorTests.test_invalid_envelopes_and_limits) ... ok
+test_missing_internal_id_uses_real_search_root (test_awards.AwardCollectorTests.test_missing_internal_id_uses_real_search_root) ... ok
+test_missing_offline_response_is_a_failure (test_awards.AwardCollectorTests.test_missing_offline_response_is_a_failure) ... ok
+test_offline_rows_never_attributed_as_verified (test_awards.AwardCollectorTests.test_offline_rows_never_attributed_as_verified) ... ok
+test_outage_is_logged_without_false_success (test_awards.AwardCollectorTests.test_outage_is_logged_without_false_success) ... ok
+test_oversized_response_is_a_failure (test_awards.AwardCollectorTests.test_oversized_response_is_a_failure) ... ok
+test_real_feed_import_dedup_and_failed_cursor (test_awards.AwardCollectorTests.test_real_feed_import_dedup_and_failed_cursor) ... ok
+test_bad_config_and_overflow_do_not_advance_progress (test_daily.DailyTests.test_bad_config_and_overflow_do_not_advance_progress) ... ok
+test_manual_import_does_not_advance_rss_window (test_daily.DailyTests.test_manual_import_does_not_advance_rss_window) ... ok
+test_pending_matches_unmatched_failures_reports_and_repeat (test_daily.DailyTests.test_pending_matches_unmatched_failures_reports_and_repeat) ... ok
+test_rss_atom_and_unsafe_entries (test_daily.DailyTests.test_rss_atom_and_unsafe_entries) ... ok
+test_amount_validation_and_unknown_publication (test_research.ResearchTests.test_amount_validation_and_unknown_publication) ... ok
+test_bad_batch_is_atomic_and_rejects_unknown_company (test_research.ResearchTests.test_bad_batch_is_atomic_and_rejects_unknown_company) ... ok
+test_candidate_identity_and_persistence (test_research.ResearchTests.test_candidate_identity_and_persistence) ... ok
+test_complete_qualification_and_optimistic_conflict (test_research.ResearchTests.test_complete_qualification_and_optimistic_conflict) ... ok
+test_evidence_url_and_date_rejected (test_research.ResearchTests.test_evidence_url_and_date_rejected) ... ok
+test_incomplete_or_out_of_stage_cannot_be_qualified (test_research.ResearchTests.test_incomplete_or_out_of_stage_cannot_be_qualified) ... ok
+test_no_dollar_event_deduplicates_tracking_urls_and_titles (test_research.ResearchTests.test_no_dollar_event_deduplicates_tracking_urls_and_titles) ... ok
+test_promotion_preserves_existing_crm_and_versions (test_research.ResearchTests.test_promotion_preserves_existing_crm_and_versions) ... ok
+test_review_downgrade_blocks_new_promotion (test_research.ResearchTests.test_review_downgrade_blocks_new_promotion) ... ok
+test_same_source_can_support_distinct_events (test_research.ResearchTests.test_same_source_can_support_distinct_events) ... ok
+test_source_failure_retained_does_not_advance_success (test_research.ResearchTests.test_source_failure_retained_does_not_advance_success) ... ok
+test_stale_review_cannot_promote (test_research.ResearchTests.test_stale_review_cannot_promote) ... ok
+test_candidate_integration_and_persistence (test_server.ServerTests.test_candidate_integration_and_persistence) ... ok
+test_crm_survives_research_and_promotion (test_server.ServerTests.test_crm_survives_research_and_promotion) ... ok
+test_gates_origin_errors_and_existing_endpoints (test_server.ServerTests.test_gates_origin_errors_and_existing_endpoints) ... ok
+test_import_no_dollars_dedupe_and_feed_projection (test_server.ServerTests.test_import_no_dollars_dedupe_and_feed_projection) ... ok
+test_legacy_evidence_survives_crm_edit_without_becoming_verified (test_server.ServerTests.test_legacy_evidence_survives_crm_edit_without_becoming_verified) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 4.827s
+
+OK
+[ATLAS] "GET /api/accounts HTTP/1.1" 200 -
+[ATLAS] "POST /api/research/candidates HTTP/1.1" 200 -
+[ATLAS] "POST /api/research/candidates HTTP/1.1" 400 -
+[ATLAS] "GET /api/bootstrap HTTP/1.1" 200 -
+[ATLAS] "PUT /api/account-plans/research-1690935f609f46fa HTTP/1.1" 200 -
+[ATLAS] "GET /api/account-plans HTTP/1.1" 200 -
+[ATLAS] "GET /api/accounts HTTP/1.1" 200 -
+[ATLAS] "PUT /api/account-plans/market-aerovironment HTTP/1.1" 200 -
+[ATLAS] "PUT /api/research/reviews/market-aerovironment HTTP/1.1" 200 -
+[ATLAS] "POST /api/research/promote/market-aerovironment HTTP/1.1" 200 -
+[ATLAS] "GET /api/account-plans HTTP/1.1" 200 -
+[ATLAS] "POST /api/research/promote/market-aerovironment HTTP/1.1" 409 -
+[ATLAS] "GET /api/accounts HTTP/1.1" 200 -
+[ATLAS] "GET /api/account-plans HTTP/1.1" 403 -
+[ATLAS] "PUT /api/research/reviews/market-aerovironment HTTP/1.1" 403 -
+[ATLAS] "PUT /api/research/reviews/market-aerovironment HTTP/1.1" 400 -
+[ATLAS] "POST /api/research/promote/market-aerovironment HTTP/1.1" 409 -
+[ATLAS] "PUT /api/account-plans/market-aerovironment HTTP/1.1" 400 -
+[ATLAS] "PUT /api/account-plans/market-aerovironment HTTP/1.1" 400 -
+[ATLAS] "GET /api/health HTTP/1.1" 200 -
+[ATLAS] "GET /api/bootstrap HTTP/1.1" 200 -
+[ATLAS] "GET /api/accounts HTTP/1.1" 200 -
+[ATLAS] "GET /api/account-plans HTTP/1.1" 200 -
+[ATLAS] "GET /api/research HTTP/1.1" 200 -
+[ATLAS] "GET /research.html HTTP/1.1" 200 -
+[ATLAS] "GET /atlas_growth_live.html HTTP/1.1" 200 -
+[ATLAS] "GET /api/accounts HTTP/1.1" 200 -
+[ATLAS] "POST /api/research/import HTTP/1.1" 200 -
+[ATLAS] "POST /api/research/import HTTP/1.1" 200 -
+[ATLAS] "GET /api/research HTTP/1.1" 200 -
+[ATLAS] "GET /api/accounts HTTP/1.1" 200 -
+[ATLAS] "PUT /api/account-plans/market-aerovironment HTTP/1.1" 200 -
+[ATLAS] "GET /api/research HTTP/1.1" 200 -

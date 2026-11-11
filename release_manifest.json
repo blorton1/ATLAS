@@ -1,0 +1,11 @@
+{
+  "buildDate": "2026-11-10",
+  "base": "ATLAS_Pro_Account_Handoff.zip",
+  "integratedReference": "ATLAS_Phase2_Update_Only.zip",
+  "automatedTestsPassed": 30,
+  "marketAccounts": 25,
+  "starterManagedAccounts": 0,
+  "starterQualifiedReviews": 0,
+  "starterPendingFeedEvents": 1,
+  "marketDatabaseSHA256": "c4ef84e53cc5646c2818d6c65537bc24a4cdcf9829401be58c3212e26415eb80"
+}

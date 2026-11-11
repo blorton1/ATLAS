@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log
+backups/
+*-wal
+*-shm
+*-journal
+# The two SQLite databases are deliberately included as interview example data.

@@ -1,0 +1,219 @@
+{
+  "status": "UNVERIFIED MIGRATION REFERENCE",
+  "origin": "ATLAS_Phase2_Update_Only.zip / phase2_market.py",
+  "notice": "Historical claims copied from the Phase 2 archive for manual review only. No source was independently rechecked for this migration. Not imported into the app, qualified prospect list or verified feed. Verify entity, current US presence, latest funding stage, exact amounts and primary sources before importing.",
+  "companies": [
+    {
+      "name": "Anduril Industries",
+      "sector": "Defense autonomy",
+      "website": "https://www.anduril.com/",
+      "workflowHypothesis": "Engineering knowledge assistant"
+    },
+    {
+      "name": "Shield AI",
+      "sector": "Defense autonomy",
+      "website": "https://shield.ai/",
+      "workflowHypothesis": "Engineering support knowledge"
+    },
+    {
+      "name": "Saronic Technologies",
+      "sector": "Maritime systems",
+      "website": "https://www.saronic.com/",
+      "workflowHypothesis": "Manufacturing quality documentation"
+    },
+    {
+      "name": "Epirus",
+      "sector": "Defense electronics",
+      "website": "https://www.epirusinc.com/",
+      "workflowHypothesis": "Technical document retrieval"
+    },
+    {
+      "name": "Skydio",
+      "sector": "Defense autonomy",
+      "website": "https://www.skydio.com/",
+      "workflowHypothesis": "Support engineering assistant"
+    },
+    {
+      "name": "Saildrone",
+      "sector": "Maritime systems",
+      "website": "https://www.saildrone.com/",
+      "workflowHypothesis": "Fleet operations knowledge"
+    },
+    {
+      "name": "Hadrian",
+      "sector": "Advanced manufacturing",
+      "website": "https://www.hadrian.co/",
+      "workflowHypothesis": "Manufacturing engineering knowledge"
+    },
+    {
+      "name": "Firestorm Labs",
+      "sector": "Defense manufacturing",
+      "website": "https://www.launchfirestorm.com/",
+      "workflowHypothesis": "Work instruction management"
+    },
+    {
+      "name": "Castelion",
+      "sector": "Defense manufacturing",
+      "website": "https://www.castelion.com/",
+      "workflowHypothesis": "Quality and supplier documentation"
+    },
+    {
+      "name": "Mach Industries",
+      "sector": "Defense manufacturing",
+      "website": "https://www.machindustries.com/",
+      "workflowHypothesis": "Manufacturing operations search"
+    },
+    {
+      "name": "Hermeus",
+      "sector": "Aerospace",
+      "website": "https://www.hermeus.com/",
+      "workflowHypothesis": "Test documentation search"
+    },
+    {
+      "name": "Ursa Major",
+      "sector": "Propulsion",
+      "website": "https://www.ursamajor.com/",
+      "workflowHypothesis": "Engineering knowledge retrieval"
+    },
+    {
+      "name": "Astranis",
+      "sector": "Space systems",
+      "website": "https://www.astranis.com/",
+      "workflowHypothesis": "Program documentation assistant"
+    },
+    {
+      "name": "True Anomaly",
+      "sector": "Space systems",
+      "website": "https://www.trueanomaly.space/",
+      "workflowHypothesis": "Engineering document navigation"
+    },
+    {
+      "name": "Varda Space Industries",
+      "sector": "Space systems",
+      "website": "https://www.varda.com/",
+      "workflowHypothesis": "Research document knowledge"
+    },
+    {
+      "name": "Impulse Space",
+      "sector": "Space systems",
+      "website": "https://www.impulsespace.com/",
+      "workflowHypothesis": "Manufacturing engineering knowledge"
+    },
+    {
+      "name": "Apex Space",
+      "sector": "Space systems",
+      "website": "https://www.apexspace.com/",
+      "workflowHypothesis": "Production documentation assistant"
+    },
+    {
+      "name": "Red 6",
+      "sector": "Aerospace",
+      "website": "https://www.red6ar.com/",
+      "workflowHypothesis": "Technical support knowledge"
+    },
+    {
+      "name": "Neros",
+      "sector": "Defense autonomy",
+      "website": "https://www.neros.tech/",
+      "workflowHypothesis": "Production knowledge assistant"
+    },
+    {
+      "name": "Gecko Robotics",
+      "sector": "Industrial robotics",
+      "website": "https://www.geckorobotics.com/",
+      "workflowHypothesis": "Industrial inspection reporting"
+    },
+    {
+      "name": "X-Bow Systems",
+      "sector": "Propulsion",
+      "website": "https://www.xbowsystems.com/",
+      "workflowHypothesis": "Quality documentation assistant"
+    },
+    {
+      "name": "Divergent",
+      "sector": "Advanced manufacturing",
+      "website": "https://www.divergent3d.com/",
+      "workflowHypothesis": "Manufacturing workflow analysis"
+    },
+    {
+      "name": "Forterra",
+      "sector": "Defense autonomy",
+      "website": "https://www.forterra.com/",
+      "workflowHypothesis": "Field support knowledge"
+    },
+    {
+      "name": "Overland AI",
+      "sector": "Defense autonomy",
+      "website": "https://www.overland.ai/",
+      "workflowHypothesis": "Engineering support documentation"
+    },
+    {
+      "name": "CHAOS Industries",
+      "sector": "Defense electronics",
+      "website": "https://www.chaosinc.com/",
+      "workflowHypothesis": "Systems documentation assistant"
+    }
+  ],
+  "events": [
+    {
+      "company": "Castelion",
+      "type": "Funding",
+      "date": "2026-08-19",
+      "title": "Company announced $1B Series C financing",
+      "amount": 1000000000,
+      "source": "Castelion company announcement",
+      "sourceUrl": "https://www.castelion.com/news/series-c/",
+      "verification": "Pending"
+    },
+    {
+      "company": "Impulse Space",
+      "type": "Funding",
+      "date": "2026-09-16",
+      "title": "Company announced $308M Series D extension",
+      "amount": 308000000,
+      "source": "Impulse Space company announcement",
+      "sourceUrl": "https://www.impulsespace.com/updates/impulse-space-announces-308-million-series-d-extension-to-meet-increasing-demand-for-in-space-mobility",
+      "verification": "Pending"
+    },
+    {
+      "company": "Impulse Space",
+      "type": "Funding",
+      "date": "2026-06-03",
+      "title": "Company announced $500M Series D",
+      "amount": 500000000,
+      "source": "Impulse Space company announcement",
+      "sourceUrl": "https://www.impulsespace.com/updates/impulse-space-raises-500-million-dollar-series-d-to-build-in-space-mobility-infrastructure-for-the-space-economy",
+      "verification": "Pending"
+    },
+    {
+      "company": "Hadrian",
+      "type": "Funding",
+      "date": "2025-07-17",
+      "title": "Company announced $260M Series C",
+      "amount": 260000000,
+      "source": "Hadrian company announcement",
+      "sourceUrl": "https://www.hadrian.co/blog/series-c",
+      "verification": "Pending"
+    },
+    {
+      "company": "Impulse Space",
+      "type": "Contract announcement",
+      "date": "2026-11-07",
+      "title": "Company announced two NASA Moon Base task orders; dollar value not disclosed",
+      "amount": null,
+      "source": "Impulse Space company announcement",
+      "sourceUrl": "https://www.impulsespace.com/updates/impulse-space-nasa-moon-base",
+      "verification": "Pending"
+    },
+    {
+      "company": "Castelion",
+      "type": "Contract announcement",
+      "date": "2026-09-14",
+      "title": "Company announced U.S. Navy production order valued up to $200M (ceiling, not obligations)",
+      "amount": null,
+      "source": "Castelion company announcement",
+      "sourceUrl": "https://www.castelion.com/news/",
+      "verification": "Pending"
+    }
+  ]
+}
