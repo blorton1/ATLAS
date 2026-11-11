@@ -1,0 +1,27 @@
+const assert=require('node:assert/strict');
+const {createDemoApi}=require('./demo-api.js');
+const seed={asOf:'2026-11-10',mode:'PUBLIC MARKET INTELLIGENCE',accounts:[{id:'a',name:'Example Manufacturing',website:'https://example.com',signals:[]}],accountPlans:{a:{version:1,plan:{owner:'Original owner',contacts:[{id:'c',name:'Buyer'}],relationship:'Partner',notes:'Preserve me'},updatedAt:'2026-11-10'}},researchReviews:{},feed:{events:[],runs:[]}};
+function store(){const m=new Map();return {getItem:k=>m.get(k)||null,setItem:(k,v)=>m.set(k,v),removeItem:k=>m.delete(k)};}
+const storage=store(),a=createDemoApi(seed,storage),b=createDemoApi(seed,storage),req=(p,m,x)=>a.request(p,m,x);
+assert.equal(req('/api/bootstrap').body.accounts.length,1);
+assert.equal(req('/api/research/promote/a','POST',{reviewVersion:0,planVersion:1}).status,400);
+assert.equal(req('/api/research/reviews/a','PUT',{version:0,review:{status:'Qualified target'}}).status,400);
+const review={status:'Qualified target',latestStage:'Series E+',usVerified:true,sectorVerified:true,usSource:'https://example.com/about',sectorSource:'https://example.com/products',checkedOn:'2026-01-01',reviewer:'Interview visitor',rationale:'Validate documentation workflow with operations buyer.'};
+assert.equal(req('/api/research/reviews/a','PUT',{version:0,review}).status,200);
+assert.equal(b.request('/api/research/reviews/a','PUT',{version:0,review}).status,409);
+let promoted=req('/api/research/promote/a','POST',{reviewVersion:1,planVersion:1});assert.equal(promoted.status,200);assert.equal(promoted.body.plan.owner,'Original owner');assert.equal(promoted.body.plan.relationship,'Partner');assert.equal(promoted.body.plan.contacts.length,1);assert.equal(promoted.body.plan.shortlisted,true);
+promoted=req('/api/research/promote/a','POST',{reviewVersion:1,planVersion:2});assert.equal(promoted.body.plan.activities.length,1);
+assert.equal(req('/api/account-plans/a','PUT',{version:1,plan:{notes:'stale'}}).status,409);
+assert.equal(req('/api/account-plans/a','PUT',{version:3,plan:{notes:'Saved locally'}}).status,200);
+assert.equal(b.request('/api/bootstrap').body.accountPlans.a.plan.notes,'Saved locally');
+assert.equal(seed.accountPlans.a.plan.notes,'Preserve me');
+const candidate={name:'New Factory',sector:'Manufacturing',hq:'Texas',website:'https://newfactory.test',workflow:'Document review'};
+const added=req('/api/research/candidates','POST',candidate);assert.equal(added.status,200);assert.equal(req('/api/research/candidates','POST',{...candidate,name:'Another name'}).status,400);assert.equal(req('/api/research/candidates','POST',{...candidate,website:'https://different.test'}).status,400);
+const event={accountId:'a',type:'hiring',title:'New team',date:'2026-01-01',source:'Company',sourceUrl:'https://example.com/news',verification:'Pending',amount:null};
+const batch={runDate:'2026-01-01',events:[event],sources:[{name:'Company',url:'https://example.com/news',status:'ok'}]};
+assert.equal(req('/api/research/import','POST',batch).body.inserted,1);assert.equal(req('/api/research/import','POST',batch).body.duplicates,1);
+assert.equal(req('/api/research/import','POST',{...batch,events:[{...event,title:'valid'}, {...event,accountId:'missing'}]}).status,400);assert.equal(req('/api/research').body.feed.events.length,1);
+assert.equal(req('/api/research/collect','POST',{}).status,501);
+const bad=createDemoApi(seed,{getItem:()=>null,setItem:()=>{throw Error('quota');},removeItem:()=>{}});assert.equal(bad.request('/api/account-plans/a','PUT',{version:1,plan:{notes:'not saved'}}).status,507);assert.equal(bad.request('/api/bootstrap').body.accountPlans.a.plan.notes,'Preserve me');
+a.reset();assert.equal(req('/api/bootstrap').body.accounts.length,1);assert.equal(req('/api/bootstrap').body.accountPlans.a.plan.notes,'Preserve me');
+console.log('PASS: snapshot, isolated persistence, cross-tab conflicts, qualification, preservation, promotion idempotency, candidate dedup, atomic imports, disabled collector, storage failure and reset.');

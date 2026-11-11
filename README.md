@@ -2,6 +2,8 @@
 
 An interview portfolio prototype by Brendan Lorton: identify potential OpenAI customers, turn public signals into sales hypotheses, qualify prospects, and manage account next steps.
 
+**[Try the live interview demo](https://atlas-sales-demo-brendan.bluefir512.chatgpt.site)** — no download or login. Explore all 29 companies, edit account plans, assess prospects and view intelligence. Demo edits stay in each visitor's browser; use Reset demo to restore the starting snapshot. The public demo is a November 10 snapshot, refreshed by republishing, rather than a shared live CRM.
+
 **Included example data:** 29 companies as of November 10, 2026, including four newly added prospects: Nominal, Machina Labs, Neros Technologies, and Onebrief. Both SQLite databases and sales briefs are intentionally included. This is an independent demonstration, not an official OpenAI product or a list of confirmed OpenAI customers.
 
 ## Run locally
@@ -57,4 +59,8 @@ Tests use disposable stores. The latest prospecting run verified 29 projected ac
 `atlas_server.py` serves the dashboard and API; `account_plan_store.py` stores CRM records; `research_store.py` handles prospect intake, qualification and intelligence; `atlas_growth_live.html` is the sales dashboard; `research.html` provides evidence review and daily feed. Some internal names retain the earlier research terminology.
 
 See `CRITERIA.md` for current sales criteria and `CHANGELOG.md` for development history. Older handoff and verification documents are historical; this README and current criteria describe the interview version.
+
+## Build the browser demo
+
+Run `python demo/export_demo.py /path/to/output/dist` to export the current databases with the browser adapter. Serve that directory with any static HTTPS host. `node demo/test-demo-api.cjs` checks isolated persistence, qualification, promotion, duplicate prevention and storage errors. The local Python app remains the canonical account-management workspace; visitor edits never write to its databases.
 
